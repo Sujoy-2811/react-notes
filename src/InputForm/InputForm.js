@@ -1,6 +1,9 @@
+ import { useRef } from "react";
 
 const InputForm = (prop) => {
  let text='';
+ const ref =useRef();
+ 
     const submitHandler =(event) =>{
         event.preventDefault();
         console.log("Hello");
@@ -10,17 +13,18 @@ const InputForm = (prop) => {
         prop.dataHandler(text);
         console.log(" Text is");
         console.log(text);
+        ref.current.value = '';
     }
     const dataHandler =(event) =>{
-        text =event.target.value;
-        console.log(event.target.value);
+        text =ref.current.value;
+        console.log(text);
     }
 
     return <form  onSubmit={submitHandler}>
         <label >Enter Task</label>
         <br />
-        <input type="text" 
-        onChange={dataHandler}
+        <input type="text" ref={ref}
+        onChange ={ dataHandler}
         />
         <br />
         <button type="submit">Enter</button>
