@@ -23,9 +23,11 @@ const InputForm = (prop) => {
     return <form  onSubmit={submitHandler}>
         <label >Enter Task</label>
         <br />
+        <br />
         <input type="text" ref={ref}
         onChange ={ dataHandler}
         />
+        <br />
         <br />
         <button type="submit">Enter</button>
     </form>

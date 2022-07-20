@@ -20,10 +20,10 @@ function App() {
     });
   };
   return (
-    <div>
+    <center>
       <InputForm dataHandler={addData}></InputForm>
       <List data={data}  deleteHandle={deleteHandle}></List>
-    </div>
+    </center>
   );
 }
 
