@@ -5,7 +5,7 @@ import ListItem from "./ListItem"
         {
             prop.data.map((item)=>{
                 // return <h1 key={item}>{item}</h1>
-               return <ListItem  key ={item} val ={item} deleteHandle={prop.deleteHandle}/> 
+               return <ListItem  key ={item.title} val ={item} deleteHandle={prop.deleteHandle}/> 
             })
         }
     </div>

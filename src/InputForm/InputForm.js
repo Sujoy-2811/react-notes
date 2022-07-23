@@ -1,31 +1,46 @@
  import { useRef } from "react";
 
+import "./InputForm.css"
+
 const InputForm = (prop) => {
- let text='';
- const ref =useRef();
+ let title='';
+ let note='';
+ const titleRef =useRef();
+ const noteRef =useRef();
  
     const submitHandler =(event) =>{
         event.preventDefault();
         console.log("Hello");
-        if (text.length === 0) {
+        if (title.length === 0 && note.length === 0) {
             return
         }
-        prop.dataHandler(text);
+        prop.dataHandler({title : title , note : note});
         console.log(" Text is");
-        console.log(text);
-        ref.current.value = '';
+        console.log(title);
+        titleRef.current.value = '';
+        noteRef.current.value = '';
     }
-    const dataHandler =(event) =>{
-        text =ref.current.value;
-        console.log(text);
+    const titleHandler =(event) =>{
+        title =titleRef.current.value;
+        console.log(title);
+    }
+    const noteHandler =(event) =>{
+        note =noteRef.current.value;
+        console.log(note);
     }
 
     return <form  onSubmit={submitHandler}>
-        <label >Enter Task</label>
+        <label >Title</label>
+        <br />
+        <input type="text" ref={titleRef}
+        onChange ={ titleHandler}
+        />
         <br />
         <br />
-        <input type="text" ref={ref}
-        onChange ={ dataHandler}
+        <label >Note</label>
+        <br />
+        <input type="text" ref={noteRef}
+        onChange ={ noteHandler}
         />
         <br />
         <br />

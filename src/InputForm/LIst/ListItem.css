@@ -1,0 +1,21 @@
+.card{
+    width: 180px;
+    height:  200px;
+    border: 1px solid ;
+    display: inline-block;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: blueviolet;
+    line-height: 50px;
+    overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: normal;
+    text-overflow: ellipsis;
+}

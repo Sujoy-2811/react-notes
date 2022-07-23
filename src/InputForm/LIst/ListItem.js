@@ -1,8 +1,11 @@
+import './ListItem.css'
+
 const ListItem = (prop)=>{
 
-    return <h1 onClick={ ()=>{prop.deleteHandle(prop.val)}}>
-        {prop.val}
-    </h1>
+    return <div className='card' onClick={ ()=>{prop.deleteHandle(prop.val)}}>
+        <h2>{prop.val.title}</h2>
+        <span>{prop.val.note}</span>
+    </div>
     
  }
 
