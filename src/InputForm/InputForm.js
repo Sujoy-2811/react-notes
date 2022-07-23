@@ -11,14 +11,14 @@ const InputForm = (prop) => {
     const submitHandler =(event) =>{
         event.preventDefault();
         console.log("Hello");
-        if (title.length === 0 && note.length === 0) {
-            return
-        }
-        prop.dataHandler({title : title , note : note});
+        if (title.length > 0 && note.length > 0) {
+            prop.dataHandler({title : title , note : note});
         console.log(" Text is");
         console.log(title);
         titleRef.current.value = '';
         noteRef.current.value = '';
+        }
+        
     }
     const titleHandler =(event) =>{
         title =titleRef.current.value;

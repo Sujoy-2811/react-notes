@@ -6,7 +6,7 @@ import InputForm from "./InputForm/InputForm.js";
 import List from "./InputForm/LIst/List";
 
 function App() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([{title : "hello" , note : "This is my note"}]);
 
   const deleteHandle = (val) =>{
     setData((predata) =>{

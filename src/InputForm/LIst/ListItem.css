@@ -1,13 +1,13 @@
 .card{
-    width: 180px;
-    height:  200px;
-    border: 1px solid ;
+    width: 160px;
+    height:  150px;
+    border: 1px solid hsl(30, 91%, 48%);
     display: inline-block;
     margin: 10px;
     border-radius: 5px;
     text-align: center;
-    background-color: blueviolet;
-    line-height: 50px;
+    background-color: hsl(37, 91%, 48%);
+    line-height: 10px;
     overflow: hidden;
   text-overflow: ellipsis;
 
@@ -18,4 +18,8 @@ span {
     vertical-align: middle;
     line-height: normal;
     text-overflow: ellipsis;
+}
+
+hr{
+  border: 1px  solid rgb(214, 184, 14);
 }
