@@ -9,7 +9,7 @@
     background-color: hsl(37, 91%, 48%);
     line-height: 10px;
     overflow: hidden;
-  text-overflow: ellipsis;
+    text-overflow: ellipsis;
 
 }
 

@@ -12,7 +12,7 @@ function App() {
     setData((predata) =>{
       return predata.filter((item)=> item !== val)
     })
-    console.log(" button pressed");
+    // console.log(" button pressed");
   }
 
   const addData = (item) => {
