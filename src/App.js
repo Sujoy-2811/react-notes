@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
-import "./App.css";
-import "./util/style.css"
+import "./App.module.css";
+import "./util/style.css";
 import InputForm from "./InputForm/InputForm.js";
 import List from "./InputForm/LIst/List";
+
+import styles from "./App.module.css";
 
 function App() {
   const [data, setData] = useState([
@@ -30,8 +32,10 @@ function App() {
       <header>
         <h1>React Notes</h1>
       </header>
-      <InputForm dataHandler={addData}></InputForm>
-      <List data={data} deleteHandle={deleteHandle}></List>
+      <section className={styles.form_and_data}>
+        <InputForm dataHandler={addData}></InputForm>
+        <List data={data} deleteHandle={deleteHandle}></List>
+      </section>
     </React.Fragment>
   );
 }
