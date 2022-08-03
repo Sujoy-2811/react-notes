@@ -1,0 +1,11 @@
+body {
+    background-color: #111a1a;
+    text-decoration-color: #FFF3D9;
+}
+
+.form_and_data {
+
+    display: flex;
+    padding-left: 10px;
+
+}
