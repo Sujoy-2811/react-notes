@@ -1,0 +1,57 @@
+.card {
+  width: 160px;
+  height: 150px;
+  /* border: 1px solid hsl(30, 91%, 48%); */
+  border: 0px solid hsla(30, 91%, 48%, 0);
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: hsl(37, 91%, 48%);
+  text-overflow: ellipsis;
+  position: relative;
+
+}
+
+.delete_button {
+  background-color: rgb(211, 65, 11);
+  border: none;
+  border: solid;
+  border-color: #111a1a;
+  border-width: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  color: rgb(7, 26, 5);
+
+
+}
+
+.title_and_del_button {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  overflow: hidden;
+
+}
+
+.note_body {
+  overflow: hidden;
+}
+
+span {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-overflow: ellipsis;
+}
+
+hr {
+  border: 1px solid rgb(214, 184, 14);
+}
