@@ -17,6 +17,6 @@ body {
 
 .form:focus {
     outline: 2px;
-        outline-color: rgb(0, 255, 115);
+    outline-color: rgb(0, 255, 115);
 
 }
