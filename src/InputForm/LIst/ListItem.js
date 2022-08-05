@@ -1,13 +1,23 @@
-import './ListItem.css'
+import styles from "./ListItem.module.css";
 
-const ListItem = (prop)=>{
-
-    return <div className='card' onClick={ ()=>{prop.deleteHandle(prop.val)}}>
-        <h2>{prop.val.title}</h2>
-        <hr />
-        <span>{prop.val.note}</span>
+const ListItem = (prop) => {
+  return (
+    <div className={styles.card}>
+      <div className={styles.title_and_del_button}>
+        <h2 className={styles.title}>{prop.val.title}</h2>
+        <button
+          className={styles.delete_button}
+          onClick={() => {
+            prop.deleteHandle(prop.val);
+          }}
+        >
+          <b>X</b>
+        </button>
+      </div>
+      <hr />
+      <span className={styles.note_body}>{prop.val.note}</span>
     </div>
-    
- }
+  );
+};
 
- export default  ListItem
+export default ListItem;

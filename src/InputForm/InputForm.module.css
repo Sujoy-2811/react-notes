@@ -16,6 +16,7 @@ body {
 }
 
 .form:focus {
-    border-color: aqua;
+    outline: 2px;
+        outline-color: rgb(0, 255, 115);
 
 }
