@@ -27,6 +27,7 @@
   top: -10%;
   right: -10%;
   color: rgb(7, 26, 5);
+  user-select: none;
 
 
 }
