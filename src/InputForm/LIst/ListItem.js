@@ -4,7 +4,7 @@ const ListItem = (prop) => {
   return (
     <div className={styles.card}>
       <div className={styles.title_and_del_button}>
-        <h2 className={styles.title}>{prop.val.title}</h2>
+        <h2 className={styles.title_heading}>{prop.val.title}</h2>
         <button
           className={styles.delete_button}
           onClick={() => {

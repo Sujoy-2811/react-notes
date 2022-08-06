@@ -3,7 +3,7 @@
   height: 150px;
   /* border: 1px solid hsl(30, 91%, 48%); */
   border: 0px solid hsla(30, 91%, 48%, 0);
-  display: inline-flex;
+  display: flex;
   flex-direction: column;
   margin: 10px;
   border-radius: 5px;
@@ -34,18 +34,22 @@
 .title_and_del_button {
   display: flex;
   justify-content: center;
+  height: 50px;
 }
 
-.title {
+.title_heading {
   overflow: hidden;
+  margin-bottom: 0;
 
 }
+
 
 .note_body {
   overflow: hidden;
-}
-
-span {
+  width: 160px;
+  height: 94px;
+  border: solid;
+  border-width: 0px;
   display: inline-block;
   vertical-align: middle;
   line-height: normal;
@@ -54,4 +58,7 @@ span {
 
 hr {
   border: 1px solid rgb(214, 184, 14);
+  width: 158px;
+  padding: 0;
+  margin: 0;
 }
