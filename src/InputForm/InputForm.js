@@ -1,4 +1,4 @@
- import { useRef } from "react";
+import { useRef } from "react";
 
 import styles from "./InputForm.module.css";
 
@@ -38,9 +38,9 @@ const InputForm = (prop) => {
       <input type="text" ref={noteRef} onChange={noteHandler} />
       <br />
       <br />
-      <button type="submit">Enter</button>
+      <button type="submit">Add</button>
     </form>
   );
 };
 
-export default InputForm ;
+export default InputForm;
