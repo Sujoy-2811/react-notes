@@ -9,7 +9,9 @@ import styles from "./App.module.css";
 
 function App() {
   const [data, setData] = useState([
-    { title: "hello", note: "This is my note" },
+    { title: "12345678901234", note: "This is my note" },
+    { title: "hellos", note: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptate, molestiae rem quod ducimus veritatisff" },
+    { title: "hellosl", note: "daLorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptate, molestiae rem quod ducimus veritatisff" },
   ]);
 
   const deleteHandle = (val) => {
