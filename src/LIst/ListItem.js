@@ -1,6 +1,22 @@
 import styles from "./ListItem.module.css";
 
 const ListItem = (prop) => {
+  let color = styles.orange;
+  
+  switch (prop.val.col) {
+    case 1:
+      color = styles.red;
+      break;
+    case 2:
+        color = styles.green;
+        break;
+      case 3:
+          color = styles.blue;
+          break;
+      default :
+          color = styles.orange;
+  
+  }
 
   let title = prop.val.title
   let note = prop.val.note;
@@ -11,7 +27,7 @@ const ListItem = (prop) => {
     title = title.substring(1,11) + "...";
   }
   return (
-    <div className={styles.card}>
+    <div className={`${styles.card}  ${color}`}>
       <div className={styles.title_and_del_button}>
         <h2 className={styles.title_heading}>{title}</h2>
         <button
