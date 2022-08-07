@@ -1,8 +1,7 @@
 .card {
   width: 160px;
   height: 150px;
-  /* border: 1px solid hsl(30, 91%, 48%); */
-  border: 0px solid hsla(30, 91%, 48%, 0);
+  border: none;
   display: flex;
   flex-direction: column;
   margin: 10px;
@@ -11,7 +10,6 @@
   background-color: hsl(37, 91%, 48%);
   text-overflow: ellipsis;
   position: relative;
-
 }
 
 .delete_button {
@@ -27,8 +25,6 @@
   top: -10%;
   right: -10%;
   color: rgb(7, 26, 5);
-
-
 }
 
 .title_and_del_button {
@@ -40,7 +36,6 @@
 .title_heading {
   overflow: hidden;
   margin-bottom: 0;
-
 }
 
 .unselectable{
@@ -50,7 +45,6 @@
     -moz-user-select: -moz-none;
     -o-user-select: none;
     user-select: none;
-
 }
 
 
@@ -64,6 +58,7 @@
   vertical-align: middle;
   line-height: normal;
   text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 
 hr {

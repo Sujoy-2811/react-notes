@@ -30,15 +30,27 @@ const InputForm = (prop) => {
     <form className={styles.form} onSubmit={submitHandler}>
       <label>Title</label>
       <br />
-      <input type="text" ref={titleRef} onChange={titleHandler} />
+      <input
+        className={styles.inputs}
+        type="text"
+        ref={titleRef}
+        onChange={titleHandler}
+      />
       <br />
       <br />
       <label>Note</label>
       <br />
-      <input type="text" ref={noteRef} onChange={noteHandler} />
+      <textarea
+        className={`${styles.inputs} ${styles.input_larger}`}
+        type="text"
+        ref={noteRef}
+        onChange={noteHandler}
+      />
       <br />
       <br />
-      <button type="submit">Add</button>
+      <button className={styles.add_button} type="submit">
+        Add
+      </button>
     </form>
   );
 };
