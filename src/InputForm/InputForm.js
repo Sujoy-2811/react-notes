@@ -1,7 +1,7 @@
-import { useRef } from "react";
+ import { useRef } from "react";
 
 import styles from "./InputForm.module.css";
-import InputColor from "./InputColor.js";
+import InputColor from "./InputColor.js"
 
 const InputForm = (prop) => {
   let title = "";
@@ -13,7 +13,7 @@ const InputForm = (prop) => {
     event.preventDefault();
     console.log("Hello");
     if (title.length > 0 && note.length > 0) {
-      prop.dataHandler({ title: title, note: note, col: color });
+      prop.dataHandler({ title: title, note: note , col : color });
       console.log(" Text is");
       console.log(title);
       titleRef.current.value = "";
@@ -21,7 +21,7 @@ const InputForm = (prop) => {
     }
   };
 
-  const colorHandler = (val) => {
+  const colorHandler = (val)=>{
     switch (val) {
       case 1:
         color = 1;
@@ -32,14 +32,14 @@ const InputForm = (prop) => {
       case 3:
         color = 3;
         break;
-
+  
       default:
         color = 0;
         break;
     }
 
     console.log(color);
-  };
+  }
   const titleHandler = (event) => {
     title = titleRef.current.value;
     console.log(title);
@@ -62,7 +62,7 @@ const InputForm = (prop) => {
       <br />
       <label>Select Color</label>
       <br />
-      <InputColor colHandler={colorHandler} />
+      <InputColor colHandler = {colorHandler} />
       <br />
       <br />
       <button type="submit">Enter</button>
@@ -70,4 +70,4 @@ const InputForm = (prop) => {
   );
 };
 
-export default InputForm;
+export default InputForm ;
