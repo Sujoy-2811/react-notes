@@ -68,18 +68,3 @@ hr {
   padding: 0;
   margin: 0;
 }
-
-.orange{
-  background: hsl(37, 91%, 48%);
-}
-
-.red{
-  background: rgb(215, 3, 3);
-}
- .green{
-  background: rgb(16, 215, 12);
- }
-
- .blue{
-  background: rgb(36, 2, 203);
- }
