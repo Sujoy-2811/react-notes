@@ -1,0 +1,70 @@
+.card {
+  width: 160px;
+  height: 150px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border-radius: 5px;
+  text-align: center;
+  background-color: hsl(37, 91%, 48%);
+  text-overflow: ellipsis;
+  position: relative;
+}
+
+.delete_button {
+  background-color: rgb(211, 65, 11);
+  border: none;
+  border: solid;
+  border-color: #111a1a;
+  border-width: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  color: rgb(7, 26, 5);
+  user-select: none;
+}
+
+.title_and_del_button {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.title_heading {
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+.unselectable{
+  
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
+
+
+.note_body {
+  overflow: hidden;
+  width: 160px;
+  height: 94px;
+  border: solid;
+  border-width: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+hr {
+  border: 1px solid rgb(214, 184, 14);
+  width: 158px;
+  padding: 0;
+  margin: 0;
+}
