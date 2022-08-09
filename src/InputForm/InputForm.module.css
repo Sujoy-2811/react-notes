@@ -13,7 +13,9 @@ body {
     background-color: rgb(20, 47, 29);
     color: rgb(255, 166, 98);
     border-bottom-right-radius: 40px;
+    border-bottom-left-radius: 40px;
     border-top-left-radius: 4px;
+    position: relative;
 }
 
 .form:focus {
@@ -62,4 +64,8 @@ body {
     height: 60px;
     width: 110px;
     border-radius: 40px;
+    position:absolute;
+    left: 110px;
+    perspective: 10px;
+    transform: rotatex(-30deg);
 }
