@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import "./App.module.css";
 import "./util/style.css";
-import InputForm from "./InputForm/InputForm.js";
+import InputForm from "./InputForm/InputForm";
 import List from "./LIst/List";
 
 import styles from "./App.module.css";

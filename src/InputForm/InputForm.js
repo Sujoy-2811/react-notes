@@ -1,7 +1,8 @@
 import { useRef } from "react";
 
 import styles from "./InputForm.module.css";
-import InputColor from "./InputColor.js";
+import InputColor from "./InputColor";
+import InputSpecial from "./Components/InputSpecial";
 
 const InputForm = (prop) => {
   let title = "";
@@ -9,15 +10,25 @@ const InputForm = (prop) => {
   let color = 0;
   const titleRef = useRef();
   const noteRef = useRef();
+
   const submitHandler = (event) => {
     event.preventDefault();
     console.log("Hello");
+
     if (title.length > 0 && note.length > 0) {
       prop.dataHandler({ title: title, note: note, col: color });
       console.log(" Text is");
       console.log(title);
       titleRef.current.value = "";
       noteRef.current.value = "";
+    } else if (title === "") {
+      console.log("ref title");
+      // console.log(titleRef.current.focus);
+      titleRef.current.focus();
+    } else if (title !== "" && note === "") {
+      console.log("ref note");
+      // console.log(noteRef.current.focus);
+      noteRef.current.focus();
     }
   };
 
@@ -48,33 +59,36 @@ const InputForm = (prop) => {
     note = noteRef.current.value;
     console.log(note);
   };
+
   return (
     <form className={styles.form} onSubmit={submitHandler}>
       <label>Title</label>
-      <br />
-      <input
+      <br className={styles.unselectable} />
+      <InputSpecial
+        inputType="INPUT"
         className={styles.inputs}
         type="text"
         ref={titleRef}
-        onChange={titleHandler}
+        onChanged123={titleHandler}
       />
-      <br />
-      <br />
+      <br className={styles.unselectable} />
+      <br className={styles.unselectable} />
       <label>Note</label>
-      <br />
-      <textarea
+      <br className={styles.unselectable} />
+      <InputSpecial
+        inputType="TEXTAREA"
         className={`${styles.inputs} ${styles.input_larger}`}
         type="text"
         ref={noteRef}
-        onChange={noteHandler}
+        onChanged123={noteHandler}
       />
-      <br />
-      <br />
+      <br className={styles.unselectable} />
+      <br className={styles.unselectable} />
       <label>Select Color</label>
-      <br />
+      <br className={styles.unselectable} />
       <InputColor colHandler={colorHandler} />
-      <br />
-      <br />
+      <br className={styles.unselectable} />
+      <br className={styles.unselectable} />
       <button className={styles.add_button} type="submit">
         Add
       </button>
