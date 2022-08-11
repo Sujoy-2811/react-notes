@@ -3,8 +3,9 @@ import { useRef } from "react";
 import styles from "./InputForm.module.css";
 import InputColor from "./InputColor";
 import InputSpecial from "./Components/InputSpecial";
+import Buttons from "./Buttons";
 
-const InputForm = (prop) => {
+const InputForm = (props) => {
   let title = "";
   let note = "";
   let color = 0;
@@ -16,7 +17,7 @@ const InputForm = (prop) => {
     console.log("Hello");
 
     if (title.length > 0 && note.length > 0) {
-      prop.dataHandler({ title: title, note: note, col: color });
+      props.dataHandler({ title: title, note: note, col: color });
       console.log(" Text is");
       console.log(title);
       titleRef.current.value = "";
@@ -59,9 +60,13 @@ const InputForm = (prop) => {
     note = noteRef.current.value;
     console.log(note);
   };
-
   return (
-    <form className={styles.form} onSubmit={submitHandler}>
+    <form
+      className={`${styles.form} ${
+        props.modifyState ? styles.form_active : ""
+      }`}
+      onSubmit={submitHandler}
+    >
       <label>Title</label>
       <br className={styles.unselectable} />
       <InputSpecial
@@ -89,9 +94,10 @@ const InputForm = (prop) => {
       <InputColor colHandler={colorHandler} />
       <br className={styles.unselectable} />
       <br className={styles.unselectable} />
-      <button className={styles.add_button} type="submit">
-        Add
-      </button>
+      <Buttons
+        formState={props.modifyState}
+        modifyHandle={props.modifyHandle}
+      ></Buttons>
     </form>
   );
 };
