@@ -1,4 +1,4 @@
-#red{
+.red{
         margin: 5px;
         width: 30px;
         height: 30px;
@@ -9,12 +9,12 @@
         box-sizing: border-box;
 }
 
-#red:hover{
+.red:hover{
         border: 2px solid rgb(255, 255, 255);
         
 }
 
-#green{
+.green{
         margin: 5px;
         width: 30px;
         height: 30px;
@@ -25,12 +25,12 @@
         box-sizing: border-box;
 }
 
-#green:hover{
+.green:hover{
         border: 2px solid rgb(255, 255, 255);
         
 }
 
-#blue{
+.blue{
         margin: 5px;
         width: 30px;
         height: 30px;
@@ -41,11 +41,11 @@
         box-sizing: border-box;
 }
 
-#blue:hover{
+.blue:hover{
         border: 2px solid rgb(255, 255, 255);
         
 }
-#orange{
+.orange{
         margin: 5px;
         width: 30px;
         height: 30px;
@@ -67,7 +67,12 @@
 } */
 
 
-#orange:hover{
+.orange:hover{
         
         border: 2px solid rgb(255, 255, 255);
+}
+
+#selectedcolor{
+        border: 4px solid rgb(195, 184, 193);
+
 }

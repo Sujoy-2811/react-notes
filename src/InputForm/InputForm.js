@@ -91,7 +91,7 @@ const InputForm = (props) => {
       <br className={styles.unselectable} />
       <label>Select Color</label>
       <br className={styles.unselectable} />
-      <InputColor colHandler={colorHandler} />
+      <InputColor colHandler={colorHandler} color={color} />
       <br className={styles.unselectable} />
       <br className={styles.unselectable} />
       <Buttons
