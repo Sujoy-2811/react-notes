@@ -12,6 +12,7 @@ body {
     padding: 20px;
     background-color: rgb(20, 47, 29);
     color: rgb(255, 166, 98);
+    border:4px solid rgba(224, 167, 24, 0);
     border-bottom-right-radius: 40px;
     border-bottom-left-radius: 40px;
     border-top-left-radius: 4px;
@@ -22,6 +23,10 @@ body {
     outline: 2px;
     outline-color: rgb(0, 255, 115);
 
+}
+.form_active{
+    border:4px solid rgba(224, 167, 24, 0.419);
+    background-color:rgb(8, 76, 32);
 }
 
 .inputs{
@@ -68,6 +73,23 @@ body {
     left: 110px;
     perspective: 10px;
     transform: rotatex(-30deg);
+}
+.cancel_button{
+    font-weight: 300;
+    font-size: small;
+    height:30px;
+    width:auto;
+    border:none;
+    border-radius:10px;
+    background-color: #253030;
+    color: rgba(232, 218, 218, 0.859);
+    position: absolute;
+    left: 240px;
+    bottom: -15px;
+}
+.cancel_button:hover{
+    background-color: rgb(109, 8, 8);
+
 }
 
 .unselectable{
