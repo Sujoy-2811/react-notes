@@ -69,3 +69,11 @@ body {
     perspective: 10px;
     transform: rotatex(-30deg);
 }
+
+.unselectable{
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    user-select: none;
+}
