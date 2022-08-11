@@ -36,7 +36,7 @@ const ListItem = (props) => {
             props.modifyHandle({ state: true });
           }}
         >
-          <b>edit</b>
+          <b>✏️</b>
         </button>
         <button
           className={styles.delete_button}

@@ -17,9 +17,7 @@
 .delete_button {
   background-color: rgb(211, 65, 11);
   border: none;
-  border: solid;
-  border-color: #111a1a;
-  border-width: 5px;
+  border: 5px solid #111a1a;
   width: 40px;
   height: 40px;
   border-radius: 40px;
@@ -28,7 +26,20 @@
   right: -10%;
   color: rgb(7, 26, 5);
   user-select: none;
+}
 
+.modify_button{
+  background-color: rgb(11, 104, 211);
+  border: none;
+  border: 5px solid #111a1a;
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  position: absolute;
+  top: -10%;
+  right: 10%;
+  color: rgb(7, 26, 5);
+  user-select: none;
 
 }
 
