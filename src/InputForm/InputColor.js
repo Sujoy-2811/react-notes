@@ -10,7 +10,7 @@ const InputColor = (prop) => {
   return (
     <React.Fragment>
       <div
-      id={selectedColorSTate === 0 && styles.selectedcolor }
+      id={selectedColorSTate === 0 ? styles.selectedcolor : '' }
       className={styles.orange}
       onClick={() => {
         colHandler(0);
@@ -18,7 +18,7 @@ const InputColor = (prop) => {
       }}
       ></div>
       <div
-      id={selectedColorSTate === 1 && styles.selectedcolor }
+      id={selectedColorSTate === 1  ? styles.selectedcolor : '' }
       className={styles.red}
       onClick={() => {
         colHandler(1);
@@ -26,7 +26,7 @@ const InputColor = (prop) => {
       }}
       ></div>
       <div
-        id={selectedColorSTate === 2 && styles.selectedcolor }
+        id={selectedColorSTate === 2  ? styles.selectedcolor : ''  }
         className={styles.green}
         onClick={() => {
           colHandler(2);
@@ -34,7 +34,7 @@ const InputColor = (prop) => {
         }}
         ></div>
       <div
-        id={selectedColorSTate === 3 && styles.selectedcolor }
+        id={selectedColorSTate === 3  ? styles.selectedcolor : ''  }
         className={styles.blue}
         onClick={() => {
           colHandler(3);

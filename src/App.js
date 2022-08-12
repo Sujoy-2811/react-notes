@@ -9,18 +9,20 @@ import styles from "./App.module.css";
 
 function App() {
   const [data, setData] = useState([
-    { title: "hi", note: "This is my note" },
+    { id : 0 , title: "hi", note: "This is my note" },
     {
+      id : 1 , 
       title: "hello",
       note: "This is my noteThis is my noteThis is my noteThis is my note",
       col: 1,
     },
-    { title: "127890fvd1234", note: "This is my note", col: 2 },
-    { title: "12789vdcxv01234", note: "This is my note", col: 3 },
-    { title: "1278dv901234", note: "This is my note", col: 2 },
-    { title: "12789dx01234", note: "This is my note", col: 3 },
-    { title: "1278d901234", note: "This is my note", col: 0 },
+    { id : 2 , title: "127890fvd1234", note: "This is my note", col: 2 },
+    { id : 3 , title: "12789vdcxv01234", note: "This is my note", col: 3 },
+    { id : 4 , title: "1278dv901234", note: "This is my note", col: 2 },
+    { id : 5 , title: "12789dx01234", note: "This is my note", col: 3 },
+    { id : 6 , title: "1278d901234", note: "This is my note", col: 0 },
   ]);
+  let inputFormData = { id : -1 , title :"" , note: "" , col : 0};
   const [modifyState, setModifyState] = useState(false);
 
   const deleteHandle = (val) => {
@@ -30,11 +32,23 @@ function App() {
   };
 
   const modifyHandle = (val) => {
+    
+    console.log( "line 35 app : "+val.id);
+    console.log( "line 36 app : "+val.state);
+    if (val.state) {
+      inputFormData = (data.filter((item)=> item.id === val.id ))[0]
+      console.log(" line 40 app");
+      console.log(inputFormData);
+    }else{
+      inputFormData = { id : -1 , title :"" , note: "" , col : 0};
+    }
     setModifyState(val.state);
   };
 
   const addData = (item) => {
     setData((preData) => {
+      item.id = item.title + Math.random().toString(16);
+      console.log(item);
       if (preData.length === 0) {
         return [item];
       }
@@ -51,6 +65,8 @@ function App() {
           dataHandler={addData}
           modifyHandle={modifyHandle}
           modifyState={modifyState}
+          inputFormData = {inputFormData}
+
         ></InputForm>
         <List
           data={data}

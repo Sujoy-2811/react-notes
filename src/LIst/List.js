@@ -7,7 +7,7 @@ const List = (props) => {
         // return <h1 key={item}>{item}</h1>
         return (
           <ListItem
-            key={item.title}
+            key={item.id}
             val={item}
             deleteHandle={props.deleteHandle}
             modifyHandle={props.modifyHandle}

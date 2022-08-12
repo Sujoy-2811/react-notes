@@ -6,9 +6,11 @@ import InputSpecial from "./Components/InputSpecial";
 import Buttons from "./Buttons";
 
 const InputForm = (props) => {
-  let title = "";
-  let note = "";
-  let color = 0;
+  let title = props.inputFormData.title;
+  let note = props.inputFormData.note;
+  let color = props.inputFormData.col;
+  console.log("line 12 inputform : " , props.inputFormData);
+  console.log("hiii");
   const titleRef = useRef();
   const noteRef = useRef();
 

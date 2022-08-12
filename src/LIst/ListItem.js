@@ -33,7 +33,7 @@ const ListItem = (props) => {
         <button
           className={styles.modify_button}
           onClick={() => {
-            props.modifyHandle({ state: true });
+            props.modifyHandle({ state: true , id : props.val.id});
           }}
         >
           <b>✏️</b>
