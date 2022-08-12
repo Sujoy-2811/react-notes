@@ -4,7 +4,6 @@ const List = (props) => {
   return (
     <div className={styles.grid}>
       {props.data.map((item) => {
-        // return <h1 key={item}>{item}</h1>
         return (
           <ListItem
             key={item.id}

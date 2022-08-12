@@ -9,28 +9,19 @@ const InputForm = (props) => {
   let title = props.inputFormData.title;
   let note = props.inputFormData.note;
   let color = props.inputFormData.col;
-  console.log("line 12 inputform : " , props.inputFormData);
-  console.log("hiii");
   const titleRef = useRef();
   const noteRef = useRef();
 
   const submitHandler = (event) => {
     event.preventDefault();
-    console.log("Hello");
 
     if (title.length > 0 && note.length > 0) {
       props.dataHandler({ title: title, note: note, col: color });
-      console.log(" Text is");
-      console.log(title);
       titleRef.current.value = "";
       noteRef.current.value = "";
     } else if (title === "") {
-      console.log("ref title");
-      // console.log(titleRef.current.focus);
       titleRef.current.focus();
     } else if (title !== "" && note === "") {
-      console.log("ref note");
-      // console.log(noteRef.current.focus);
       noteRef.current.focus();
     }
   };
@@ -52,16 +43,17 @@ const InputForm = (props) => {
         break;
     }
 
-    console.log(color);
   };
   const titleHandler = (event) => {
     title = titleRef.current.value;
-    console.log(title);
   };
   const noteHandler = (event) => {
     note = noteRef.current.value;
-    console.log(note);
   };
+  if (props.inputFormData.id !== -1) {
+    titleRef.current.value = props.inputFormData.title;
+    noteRef.current.value = props.inputFormData.note;
+  } 
   return (
     <form
       className={`${styles.form} ${
@@ -102,6 +94,6 @@ const InputForm = (props) => {
       ></Buttons>
     </form>
   );
-};
+};;
 
 export default InputForm;
