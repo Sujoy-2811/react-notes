@@ -2,36 +2,35 @@ import React from "react";
 import styles from "./InputForm.module.css";
 
 function Buttons(props) {
-  switch (props.formState) {
-    case true:
+  const condition = props.formState;
       return (
         <>
           <button
             className={styles.add_button}
-            onClick={() => {
-              props.modifyHandle({ state: false });
-            }}
+            // onClick={() => {
+            //   props.modifyHandle({ state: false });
+            // }}
             type="submit"
           >
-            Edit
+            {condition ? "Edit" : "Add"}
           </button>
-          <button
+          {condition && <button
             className={styles.cancel_button}
             onClick={() => {
               props.modifyHandle({ state: false });
             }}
           >
             Cancel
-          </button>
+          </button>}
         </>
       );
-    default:
-      return (
-        <button className={styles.add_button} type="submit">
-          Add
-        </button>
-      );
-  }
+    // default:
+    //   return (
+    //     <button className={styles.add_button} type="submit">
+    //       Add
+    //     </button>
+    //   );
+  // }
 }
 
 export default Buttons;

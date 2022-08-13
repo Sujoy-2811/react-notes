@@ -1,20 +1,39 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import styles from "./InputColor.module.css";
 
-const InputColor = (prop) => {
-  const [selectedColorSTate , stateSelectedColorSTate] = useState(prop.color)
-  let colHandler = prop.colHandler;
+const InputColor = (props) => {
+
+  let color = props.color
+
+  console.log("input color 7 : " + color);
+  
+  const [selectedColorSTate , setSelectedColorSTate] = useState(color);
+  
+  useEffect(() => {
+    
+    setSelectedColorSTate(color);
+    console.log("useeffect");
+    
+  }, [color, selectedColorSTate])
+  
+
+  
+  
+  console.log("input color 10 color state : " + selectedColorSTate);
+  let colHandler = props.colHandler;
   console.log(selectedColorSTate);
   console.log(selectedColorSTate === 0);
   return (
     <React.Fragment>
       <div
-      id={selectedColorSTate === 0 ? styles.selectedcolor : '' }
+      id={selectedColorSTate === 4 ? styles.selectedcolor : '' }
       className={styles.orange}
       onClick={() => {
-        colHandler(0);
-        stateSelectedColorSTate(0);
+        colHandler(4);
+        setSelectedColorSTate(4);
+        color = 4;
       }}
       ></div>
       <div
@@ -22,7 +41,8 @@ const InputColor = (prop) => {
       className={styles.red}
       onClick={() => {
         colHandler(1);
-        stateSelectedColorSTate(1);
+        // setSelectedColorSTate(1);
+        color = 1;
       }}
       ></div>
       <div
@@ -30,7 +50,8 @@ const InputColor = (prop) => {
         className={styles.green}
         onClick={() => {
           colHandler(2);
-          stateSelectedColorSTate(2);
+          setSelectedColorSTate(2);
+          color = 2;
         }}
         ></div>
       <div
@@ -38,7 +59,8 @@ const InputColor = (prop) => {
         className={styles.blue}
         onClick={() => {
           colHandler(3);
-          stateSelectedColorSTate(3);
+          setSelectedColorSTate(3);
+          color = 3;
         }}
         ></div>
     </React.Fragment>
