@@ -33,7 +33,7 @@ const ListItem = (props) => {
         <button
           className={styles.modify_button}
           onClick={() => {
-            props.modifyHandle({ state: true , id : props.val.id});
+            props.modifyHandle({ state: true, id: props.val.id });
           }}
         >
           <b>✏️</b>
@@ -49,6 +49,7 @@ const ListItem = (props) => {
       </div>
       <hr />
       <span className={styles.note_body}>{note}</span>
+      <span className={styles.time_style}>{props.time}</span>
     </div>
   );
 };

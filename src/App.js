@@ -9,18 +9,55 @@ import styles from "./App.module.css";
 
 function App() {
   const [data, setData] = useState([
-    { id: 0, title: "hi", note: "This is my note"  , col : 4},
+    {
+      id: 0,
+      title: "hi",
+      note: "This is my note",
+      col: 4,
+      time: "Sun, 14 Aug 22, 23:38",
+    },
     {
       id: 1,
       title: "hello",
       note: "This is my noteThis is my noteThis is my noteThis is my note",
       col: 1,
+      time: "Sun, 14 Aug 22, 23:38",
     },
-    { id: 2, title: "127890fvd1234", note: "This is my note", col: 2 },
-    { id: 3, title: "12789vdcxv01234", note: "This is my note", col: 3 },
-    { id: 4, title: "1278dv901234", note: "This is my note", col: 2 },
-    { id: 5, title: "12789dx01234", note: "This is my note", col: 3 },
-    { id: 6, title: "1278d901234", note: "This is my note", col: 4 },
+    {
+      id: 2,
+      title: "127890fvd1234",
+      note: "This is my note",
+      col: 2,
+      time: "Sun, 14 Aug 22, 23:38",
+    },
+    {
+      id: 3,
+      title: "12789vdcxv01234",
+      note: "This is my note",
+      col: 3,
+      time: "Sun, 14 Aug 22, 23:38",
+    },
+    {
+      id: 4,
+      title: "1278dv901234",
+      note: "This is my note",
+      col: 2,
+      time: "Sun, 14 Aug 22, 23:38",
+    },
+    {
+      id: 5,
+      title: "12789dx01234",
+      note: "This is my note",
+      col: 3,
+      time: "Sun, 14 Aug 22, 23:38",
+    },
+    {
+      id: 6,
+      title: "1278d901234",
+      note: "This is my note",
+      col: 4,
+      time: "Sun, 14 Aug 22, 23:38",
+    },
   ]);
   const [inputFormData, setInputFormData] = useState({
     id: -1,
