@@ -16,7 +16,7 @@ const InputColor = (props) => {
     setSelectedColorSTate(color);
     console.log("useeffect");
     
-  }, [color, selectedColorSTate])
+  }, [color])
   
 
   
@@ -41,7 +41,7 @@ const InputColor = (props) => {
       className={styles.red}
       onClick={() => {
         colHandler(1);
-        // setSelectedColorSTate(1);
+        setSelectedColorSTate(1);
         color = 1;
       }}
       ></div>

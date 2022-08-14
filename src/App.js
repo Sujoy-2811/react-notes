@@ -9,7 +9,7 @@ import styles from "./App.module.css";
 
 function App() {
   const [data, setData] = useState([
-    { id: 0, title: "hi", note: "This is my note" },
+    { id: 0, title: "hi", note: "This is my note"  , col : 4},
     {
       id: 1,
       title: "hello",
@@ -32,7 +32,7 @@ function App() {
 
   const deleteHandle = (val) => {
     setData((predata) => {
-      return predata.filter((item) => item !== val);
+      return [...predata.filter((item) => item !== val)];
     });
   };
 
@@ -71,6 +71,8 @@ function App() {
       
     });
   };
+
+  console.log("running........");
   return (
     <React.Fragment>
       <header>
