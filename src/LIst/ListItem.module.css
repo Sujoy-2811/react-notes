@@ -1,6 +1,6 @@
 .card {
   width: 160px;
-  height: 150px;
+  height: 200px;
   /* border: 1px solid hsl(30, 91%, 48%); */
   border: 0px solid hsla(30, 91%, 48%, 0);
   display: flex;
@@ -11,7 +11,6 @@
   background-color: hsl(37, 91%, 48%);
   text-overflow: ellipsis;
   position: relative;
-
 }
 
 .delete_button {
@@ -74,13 +73,21 @@ hr {
   padding: 0;
   margin: 0;
 }
+.time_style{
+  color: rgba(0, 0, 0, 0.626);
+  font-size: x-small;
+  font-weight: 200;
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+}
 
 .orange{
   background: hsl(37, 91%, 48%);
 }
 
 .red{
-  background: rgb(215, 3, 3);
+  background: rgb(198, 38, 38);
 }
  .green{
   background: rgb(16, 215, 12);

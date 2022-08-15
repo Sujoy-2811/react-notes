@@ -17,21 +17,39 @@ const InputForm = (props) => {
   useEffect(() => {
     titleRef.current.value = props.inputFormData.title;
     noteRef.current.value = props.inputFormData.note;
-  }, [props.inputFormData])
-  
-  
+  }, [props.inputFormData]);
+
   console.log("input form 15 :");
   console.log(props.inputFormData);
   console.log("color value : " + color);
 
-
   const submitHandler = (event) => {
+    const dateOptions = {
+      weekday: "short",
+      year: "2-digit",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+    };
+    
+    // console.log(additionDate.toLocaleDateString("en-GB", dateOptions))
+    // console.log(additionDate.toLocaleString());
     event.preventDefault();
     console.log("submit done");
-    
+
     if (title.length > 0 && note.length > 0) {
       console.log("inner submit form ");
-      props.dataHandler({ id : id , title: title, note: note, col: color });
+      const additionDateAndTime = new Date().toLocaleDateString(
+        "en-GB",
+        dateOptions
+      );
+      console.log(additionDateAndTime);
+      props.dataHandler({ id: id,
+          title: title,
+          note: note,
+          col: color,
+          time:additionDateAndTime.toString(), });
       titleRef.current.value = "";
       noteRef.current.value = "";
     } else if (title === "") {
@@ -58,7 +76,6 @@ const InputForm = (props) => {
         color = 4;
         break;
     }
-
   };
   const titleHandler = (event) => {
     title = titleRef.current.value;
@@ -69,7 +86,7 @@ const InputForm = (props) => {
   // if (props.inputFormData.id !== -1) {
   //   titleRef.current.value = props.inputFormData.title;
   //   noteRef.current.value = props.inputFormData.note;
-  // } 
+  // }
   return (
     <form
       className={`${styles.form} ${
@@ -110,6 +127,6 @@ const InputForm = (props) => {
       ></Buttons>
     </form>
   );
-};;
+};;;
 
 export default InputForm;

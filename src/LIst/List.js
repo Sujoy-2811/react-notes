@@ -11,6 +11,7 @@ const List = (props) => {
             deleteHandle={props.deleteHandle}
             modifyHandle={props.modifyHandle}
             modifyState={props.modifyState}
+            time={item.time}
           />
         );
       })}
