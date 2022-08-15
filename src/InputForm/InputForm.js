@@ -45,19 +45,21 @@ const InputForm = (props) => {
         dateOptions
       );
       console.log(additionDateAndTime);
-      props.dataHandler({ id: id,
-          title: title,
-          note: note,
-          col: color,
-          time:additionDateAndTime.toString(), });
+      props.dataHandler({
+        id: id,
+        title: title,
+        note: note,
+        col: color,
+        time: additionDateAndTime.toString(),
+      });
       titleRef.current.value = "";
       noteRef.current.value = "";
+      props.modifyHandle({ state: false });
     } else if (title === "") {
       titleRef.current.focus();
     } else if (title !== "" && note === "") {
       noteRef.current.focus();
     }
-    props.modifyHandle({ state: false });
   };
 
   const colorHandler = (val) => {
