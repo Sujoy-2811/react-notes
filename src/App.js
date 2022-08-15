@@ -84,18 +84,17 @@ function App() {
 
   const addData = (item) => {
     setData((preData) => {
-      
       if (item.id === -1) {
         item.id = item.title + Math.random().toString(16);
-      console.log(item);
-      if (preData.length === 0) {
-        return [item];
+        console.log(item);
+        if (preData.length === 0) {
+          return [item];
+        }
+        return [item, ...preData];
       }
-      return [item, ...preData];    
-      } 
 
-      let tempData = data
-      tempData.forEach(element => {
+      let tempData = data;
+      tempData.forEach((element) => {
         if (element.id === item.id) {
           element.title = item.title;
           element.note = item.note;
@@ -103,9 +102,6 @@ function App() {
         }
       });
       return tempData;
-
-
-      
     });
   };
 
@@ -121,6 +117,7 @@ function App() {
           modifyHandle={modifyHandle}
           modifyState={modifyState}
           inputFormData={inputFormData}
+          setInputFormData={setInputFormData}
         ></InputForm>
         <List
           data={data}
