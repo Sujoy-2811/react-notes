@@ -13,6 +13,12 @@ const InputForm = (props) => {
   let color = props.inputFormData.col;
   const titleRef = useRef();
   const noteRef = useRef();
+  
+  const colorChanger = (colorNumber) => {
+    props.setInputFormData((prev) => {
+      return { ...prev, col: colorNumber, note: note, title: title };
+    });
+  };
 
   useEffect(() => {
     titleRef.current.value = props.inputFormData.title;
@@ -32,7 +38,7 @@ const InputForm = (props) => {
       hour: "2-digit",
       minute: "2-digit",
     };
-    
+
     // console.log(additionDate.toLocaleDateString("en-GB", dateOptions))
     // console.log(additionDate.toLocaleString());
     event.preventDefault();
@@ -56,6 +62,10 @@ const InputForm = (props) => {
       noteRef.current.value = "";
       props.modifyHandle({ state: false });
     } else if (title === "") {
+      props.setInputFormData((prev) => {
+        return { ...prev, col: color, note: note };
+      });
+
       titleRef.current.focus();
     } else if (title !== "" && note === "") {
       noteRef.current.focus();
@@ -65,17 +75,21 @@ const InputForm = (props) => {
   const colorHandler = (val) => {
     switch (val) {
       case 1:
-        color = 1;
+        // color = 1;
+        colorChanger(1);
         break;
       case 2:
-        color = 2;
+        colorChanger(2);
+        // color = 2;
         break;
       case 3:
-        color = 3;
+        colorChanger(3);
+        // color = 3;
         break;
 
       default:
-        color = 4;
+        colorChanger(4);
+        // color = 4;
         break;
     }
   };
