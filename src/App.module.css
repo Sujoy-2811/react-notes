@@ -4,9 +4,37 @@ body {
 }
 
 .form_and_data {
-
-    
     display: flex;
     padding-left: 10px;
+}
 
+.z_above{
+    z-index: 10;
+}
+
+.rive_bg{
+    z-index: 0;
+    position: fixed;
+    left:-25%;
+    top:-25%;
+    width: 150%;
+    height: 150%;
+    overflow: hidden;
+}
+.rive_bg{
+    z-index: 0;
+    position: fixed;
+    left:-55%;
+    top:-25%;
+    width: 210%;
+    height: 210%;
+    overflow: hidden;
+}
+.head{
+    background-color:cadetblue;
+    position: relative;
+    display: block; 
+    font-size: xx-large;
+    padding: 5px;
+    padding-bottom: 0;
 }
