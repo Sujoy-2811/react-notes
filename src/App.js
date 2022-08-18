@@ -6,7 +6,7 @@ import InputForm from "./InputForm/InputForm";
 import List from "./LIst/List";
 import styles from "./App.module.css";
 import lake from "./assets/small-lake-on-a-rainy-day.riv";
-import cosmos from "./assets/cosmos.riv";
+// import cosmos from "./assets/cosmos.riv";
 
 function App() {
   const [data, setData] = useState([
@@ -110,6 +110,7 @@ function App() {
   return (
     <React.Fragment>
       <Rive className={styles.rive_bg} src={lake} artboard="Raining" />
+      {/* <Rive className={styles.rive_circle} src={lake} artboard="Circle" /> */}
       {/* <Rive
         className={styles.rive_bg_cosmos}
         src={cosmos}
