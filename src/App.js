@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+// import Rive from "@rive-app/react-canvas";
 
-import "./App.module.css";
 import "./util/style.css";
 import InputForm from "./InputForm/InputForm";
 import List from "./LIst/List";
-
 import styles from "./App.module.css";
+// import lake from "./assets/small-lake-on-a-rainy-day.riv";
+// import cosmos from "./assets/cosmos.riv";
 
 function App() {
   const [data, setData] = useState([
@@ -108,10 +109,17 @@ function App() {
   console.log("running........");
   return (
     <React.Fragment>
-      <header>
+      {/* <Rive className={styles.rive_bg} src={lake} artboard="Raining" /> */}
+      {/* <Rive className={styles.rive_circle} src={lake} artboard="Circle" /> */}
+      {/* <Rive
+        className={styles.rive_bg_cosmos}
+        src={cosmos}
+        artboard="New Artboard"
+      /> */}
+      <div className={`${styles.z_above} ${styles.head}`}>
         <h1>React Notes</h1>
-      </header>
-      <section className={styles.form_and_data}>
+      </div>
+      <section className={`${styles.z_above} ${styles.form_and_data}`}>
         <InputForm
           dataHandler={addData}
           modifyHandle={modifyHandle}

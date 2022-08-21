@@ -1,10 +1,11 @@
 header{
     background-color:cadetblue;
     margin: 0px;
+    z-index: 20;
 }
 
 h1{
     margin-top: 0px;
-    padding: 10px;
+    padding: 0px;
 }
 
