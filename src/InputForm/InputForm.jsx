@@ -1,33 +1,32 @@
-import { useRef , useEffect } from "react";
+import { useRef, useEffect } from "react";
 
 import styles from "./InputForm.module.css";
 import InputColor from "./InputColor";
 import InputSpecial from "./Components/InputSpecial";
 import Buttons from "./Buttons";
 
-const InputForm = (props) => {
-  let id = props.inputFormData.id;
-  console.log("id : " + id);
-  let title = props.inputFormData.title;
-  let note = props.inputFormData.note;
-  let color = props.inputFormData.col;
+const InputForm = ({
+  inputFormData: { id, title, note, col: color },
+  setInputFormData,
+  dataHandler,
+  modifyState,
+  modifyHandle,
+  ...props
+}) => {
+  // hook
   const titleRef = useRef();
   const noteRef = useRef();
-  
+
   const colorChanger = (colorNumber) => {
-    props.setInputFormData((prev) => {
-      return { ...prev, col: colorNumber, note: note, title: title };
+    setInputFormData((prev) => {
+      return { ...prev, col: colorNumber, note, title };
     });
   };
 
   useEffect(() => {
-    titleRef.current.value = props.inputFormData.title;
-    noteRef.current.value = props.inputFormData.note;
-  }, [props.inputFormData]);
-
-  console.log("input form 15 :");
-  console.log(props.inputFormData);
-  console.log("color value : " + color);
+    titleRef.current.value = title;
+    noteRef.current.value = note;
+  }, [title, note]);
 
   const submitHandler = (event) => {
     const dateOptions = {
@@ -39,8 +38,6 @@ const InputForm = (props) => {
       minute: "2-digit",
     };
 
-    // console.log(additionDate.toLocaleDateString("en-GB", dateOptions))
-    // console.log(additionDate.toLocaleString());
     event.preventDefault();
     console.log("submit done");
 
@@ -51,7 +48,7 @@ const InputForm = (props) => {
         dateOptions
       );
       console.log(additionDateAndTime);
-      props.dataHandler({
+      dataHandler({
         id: id,
         title: title,
         note: note,
@@ -60,9 +57,9 @@ const InputForm = (props) => {
       });
       titleRef.current.value = "";
       noteRef.current.value = "";
-      props.modifyHandle({ state: false });
+      modifyHandle({ state: false });
     } else if (title === "") {
-      props.setInputFormData((prev) => {
+      setInputFormData((prev) => {
         return { ...prev, col: color, note: note };
       });
 
@@ -73,24 +70,10 @@ const InputForm = (props) => {
   };
 
   const colorHandler = (val) => {
-    switch (val) {
-      case 1:
-        // color = 1;
-        colorChanger(1);
-        break;
-      case 2:
-        colorChanger(2);
-        // color = 2;
-        break;
-      case 3:
-        colorChanger(3);
-        // color = 3;
-        break;
-
-      default:
-        colorChanger(4);
-        // color = 4;
-        break;
+    if (val < 5 && val > 0) {
+      colorChanger(val);
+    } else {
+      colorChanger(1);
     }
   };
   const titleHandler = (event) => {
@@ -105,9 +88,7 @@ const InputForm = (props) => {
   // }
   return (
     <form
-      className={`${styles.form} ${
-        props.modifyState ? styles.form_active : ""
-      }`}
+      className={`${styles.form} ${modifyState ? styles.form_active : ""}`}
       onSubmit={submitHandler}
     >
       <label>Title</label>
@@ -137,12 +118,9 @@ const InputForm = (props) => {
       <InputColor colHandler={colorHandler} color={color} />
       <br className={styles.unselectable} />
       <br className={styles.unselectable} />
-      <Buttons
-        formState={props.modifyState}
-        modifyHandle={props.modifyHandle}
-      ></Buttons>
+      <Buttons formState={modifyState} modifyHandle={modifyHandle}></Buttons>
     </form>
   );
-};;;
+};
 
 export default InputForm;

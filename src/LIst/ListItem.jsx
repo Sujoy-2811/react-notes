@@ -41,7 +41,7 @@ const ListItem = (props) => {
         <button
           className={styles.delete_button}
           onClick={() => {
-            props.deleteHandle(props.val);
+            props.deleteHandle(props.val.id);
           }}
         >
           <b>X</b>
