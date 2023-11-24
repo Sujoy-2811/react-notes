@@ -1,7 +1,6 @@
 import ListItem from "./ListItem";
 import styles from "./List.module.css";
 const List = ({ data, deleteHandle, modifyHandle, modifyState, ...props }) => {
-  console.log(data);
   return (
     <div className={styles.grid}>
       {data.map((item) => {

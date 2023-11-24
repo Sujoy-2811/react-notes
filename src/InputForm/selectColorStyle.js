@@ -1,6 +1,4 @@
 const selectColorStyle = (id, styles) => {
-  // console.log("func");
-  // console.log(styles);
   switch (id) {
     case 1:
       return styles.red;

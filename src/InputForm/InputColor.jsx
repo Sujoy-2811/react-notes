@@ -5,13 +5,10 @@ import { colorList } from "../contants";
 import { selectColorStyle } from "./selectColorStyle";
 
 const InputColor = ({ color, colHandler }) => {
-  console.log("input color  : " + color);
-
   const [selectedColorState, setSelectedColorState] = useState(color);
 
   useEffect(() => {
     setSelectedColorState(color);
-    console.log("useffect " + color);
   }, [color]);
   return (
     <Fragment>

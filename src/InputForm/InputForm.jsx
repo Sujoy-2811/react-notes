@@ -29,6 +29,7 @@ const InputForm = ({
   }, [title, note]);
 
   const submitHandler = (event) => {
+    event.preventDefault();
     const dateOptions = {
       weekday: "short",
       year: "2-digit",
@@ -38,16 +39,15 @@ const InputForm = ({
       minute: "2-digit",
     };
 
-    event.preventDefault();
-    console.log("submit done");
+    // console.log("submit fun");
 
     if (title.length > 0 && note.length > 0) {
-      console.log("inner submit form ");
+      console.log("submit in");
+      console.log(title, note, id, color);
       const additionDateAndTime = new Date().toLocaleDateString(
         "en-GB",
         dateOptions
       );
-      console.log(additionDateAndTime);
       dataHandler({
         id: id,
         title: title,

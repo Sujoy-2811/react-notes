@@ -1,3 +1,4 @@
+const LOCAL_KEY = "my-note-list";
 const noteList = [
   {
     id: 0,
@@ -57,4 +58,4 @@ const colorList = [
   { id: 4, color: "orange" },
 ];
 
-export { noteList, colorList };
+export { noteList, colorList, LOCAL_KEY };

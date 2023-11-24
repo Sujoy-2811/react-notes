@@ -1,14 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import "./util/style.css";
 import InputForm from "./InputForm/InputForm";
 import List from "./LIst/List";
 import styles from "./App.module.css";
-import { noteList } from "./contants";
+import { noteList, LOCAL_KEY } from "./contants";
 
 function App() {
   // states
-  const [data, setData] = useState(noteList);
+  const [data, setData] = useState([]);
   const [modifyState, setModifyState] = useState(false);
   const [inputFormData, setInputFormData] = useState({
     id: -1,
@@ -20,7 +20,9 @@ function App() {
   // handles
   const deleteHandle = (val) => {
     setData((predata) => {
-      return [...predata.filter((item) => item.id !== val)];
+      const storeData = [...predata.filter((item) => item.id !== val)];
+      localStorage.setItem(LOCAL_KEY, JSON.stringify(storeData));
+      return storeData;
     });
   };
 
@@ -37,11 +39,16 @@ function App() {
     setData((preData) => {
       if (item.id === -1) {
         item.id = item.title + Math.random().toString(16);
-        console.log(item);
+        console.log("add fun in");
+        console.log("data ", preData);
         if (preData.length === 0) {
-          return [item];
+          console.log("1st item");
+          localStorage.setItem(LOCAL_KEY, JSON.stringify([item, ...preData]));
+          return [item, ...preData];
         }
-        return [item, ...preData];
+        const storeData = [item, ...preData];
+        localStorage.setItem(LOCAL_KEY, JSON.stringify(storeData));
+        return storeData;
       }
 
       let tempData = data;
@@ -52,9 +59,20 @@ function App() {
           element.col = item.col;
         }
       });
+      localStorage.setItem(LOCAL_KEY, JSON.stringify(tempData));
+      console.log("🚀 ~ file: App.jsx:61 ~old setData ~ tempData:", tempData);
       return tempData;
     });
   };
+
+  // use effect
+  useEffect(() => {
+    const storedData = JSON.parse(localStorage.getItem(LOCAL_KEY));
+    console.log("🚀 ~ file: App.jsx:67 ~ useEffect ~ storedData:", storedData);
+    if (storedData) {
+      setData(storedData);
+    }
+  }, []);
 
   // UI
   return (
