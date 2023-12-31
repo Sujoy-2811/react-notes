@@ -1,46 +1,38 @@
 body {
-    background-color: #111a1a;
-    text-decoration-color: #FFF3D9;
+  background-color: #111a1a;
+  text-decoration-color: #fff3d9;
 }
 
 .form_and_data {
-    display: flex;
-    padding-left: 10px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
 }
 
-.z_above{
-    z-index: 10;
+.z_above {
+  z-index: 10;
 }
 
-/* .rive_bg{
-    z-index: 0;
-    position: fixed;
-    left:-25%;
-    top:-25%;
-    width: 150%;
-    height: 150%;
-    overflow: hidden;
-} */
-.rive_bg{
-    z-index: 0;
-    position: fixed;
-    left:-55%;
-    top:-25%;
-    width: 210%;
-    height: 210%;
-    overflow: hidden;
+.head {
+  background-color: cadetblue;
+  position: relative;
+  display: block;
+  font-size: xx-large;
+  padding: 5px;
+  padding-bottom: 0;
 }
-.rive_circle{
-    z-index: 5;
-    position: absolute;
-    width: 50px;
-    height: 50px;
-}
-.head{
-    background-color:cadetblue;
-    position: relative;
-    display: block; 
-    font-size: xx-large;
-    padding: 5px;
+
+@media only screen and (max-width: 410px) {
+  .head {
+    font-size: 1.2rem;
+    padding-top: 0.4rem;
     padding-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .form_and_data {
+    flex-direction: column;
+    padding-left: 0;
+  }
 }
