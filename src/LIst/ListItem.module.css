@@ -1,7 +1,7 @@
 .card {
   width: 160px;
   height: 200px;
-  /* border: 1px solid hsl(30, 91%, 48%); */
+
   border: 0px solid hsla(30, 91%, 48%, 0);
   display: flex;
   flex-direction: column;
@@ -11,12 +11,15 @@
   background-color: hsl(37, 91%, 48%);
   text-overflow: ellipsis;
   position: relative;
+  color: #ffffffd0;
+  border: 1px solid #ffffff50;
 }
 
 .delete_button {
   background-color: rgb(211, 65, 11);
   border: none;
-  border: 5px solid #780b0b;
+  border: 1px solid #780b0b;
+  border: 1px solid #ffffff50;
   /* border: 5px solid #111a1a; */
   width: 40px;
   height: 40px;
@@ -27,11 +30,18 @@
   color: rgb(7, 26, 5);
   user-select: none;
 }
+.delete_button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
 
-.modify_button{
-  background-color: rgb(11, 104, 211);
+.modify_button {
+  background-color: rgb(67, 114, 168);
   border: none;
-  border: 5px solid #122065;
+  border: 1px solid #122065;
+  border: 1px solid #ffffff50;
   /* border: 5px solid #111a1a; */
   width: 40px;
   height: 40px;
@@ -41,9 +51,13 @@
   right: 10%;
   color: rgb(7, 26, 5);
   user-select: none;
-
 }
-
+.modify_button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+}
 .title_and_del_button {
   display: flex;
   justify-content: center;
@@ -53,9 +67,7 @@
 .title_heading {
   overflow: hidden;
   margin-bottom: 0;
-
 }
-
 
 .note_body {
   overflow: hidden;
@@ -70,13 +82,13 @@
 }
 
 hr {
-  border: 1px solid rgb(214, 184, 14);
+  border: 1px solid #ffffffd0;
   width: 158px;
   padding: 0;
-  margin: 0;
+  margin: 2px 0;
 }
-.time_style{
-  color: rgba(0, 0, 0, 0.626);
+.time_style {
+  color: #ffffff80;
   font-size: x-small;
   font-weight: 200;
   position: absolute;
@@ -84,17 +96,17 @@ hr {
   bottom: 0;
 }
 
-.orange{
-  background: hsl(37, 91%, 48%);
+.orange {
+  background: hsla(37, 91%, 48%, 0.5);
 }
 
-.red{
-  background: rgb(198, 38, 38);
+.red {
+  background: rgba(198, 38, 38, 0.5);
 }
- .green{
-  background: rgb(16, 215, 12);
- }
+.green {
+  background: rgba(15, 215, 12, 0.5);
+}
 
- .blue{
-  background: rgb(36, 2, 203);
- }
+.blue {
+  background: rgba(36, 2, 203, 0.5);
+}
