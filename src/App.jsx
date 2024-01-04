@@ -59,35 +59,6 @@ function App() {
         return storeData;
       });
     }
-    // if (item.id === -1) {
-    //   item.id = item.title + Math.random().toString(16);
-    //   console.log("data ", item);
-    //   setData((preData) => [item, ...preData]);
-    // }
-    // setData((preData) => {
-    //   if (item.id === -1) {
-    //     console.log("add fun in");
-    //     if (preData.length === 0) {
-    //       console.log("1st item :", item);
-    //       localStorage.setItem(LOCAL_KEY, JSON.stringify([item, ...preData]));
-    //       return [item, ...preData];
-    //     }
-    //     const storeData = [item, ...preData];
-    //     localStorage.setItem(LOCAL_KEY, JSON.stringify(storeData));
-    //     return storeData;
-    //   }
-    //   let tempData = data;
-    //   tempData.forEach((element) => {
-    //     if (element.id === item.id) {
-    //       element.title = item.title;
-    //       element.note = item.note;
-    //       element.col = item.col;
-    //     }
-    //   });
-    //   localStorage.setItem(LOCAL_KEY, JSON.stringify(tempData));
-    //   console.log("🚀 ~ file: App.jsx:61 ~old setData ~ tempData:", tempData);
-    //   return tempData;
-    // });
   };
 
   // use effect
@@ -97,11 +68,6 @@ function App() {
     if (storedData) {
       setData(storedData);
     }
-    // return () => localStorage.setItem(LOCAL_KEY, JSON.stringify(data));
-    //  {
-    //   console.log("unmount code on...");
-    //   localStorage.setItem(LOCAL_KEY, JSON.stringify(data));
-    // };
   }, []);
 
   // UI
