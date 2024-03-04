@@ -1,8 +1,13 @@
 .grid {
-    display: flex;
-    flex-wrap: wrap;
+  width: 100%;
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, 250px); */
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* au */
+  gap: 24px;
+  align-items: start;
 }
-.empty{
-    width: 100px;
-    height: 100px;
+.empty {
+  width: 100px;
+  height: 100px;
 }

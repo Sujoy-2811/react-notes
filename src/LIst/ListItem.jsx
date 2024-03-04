@@ -19,12 +19,12 @@ const ListItem = (props) => {
 
   let title = props.val.title;
   let note = props.val.note;
-  if (note.length > 108) {
-    note = note.substring(1, 108) + "...";
-  }
-  if (title.length > 10) {
-    title = title.substring(1, 11) + "...";
-  }
+  // if (note.length > 108) {
+  //   note = note.substring(1, 108) + "...";
+  // }
+  // if (title.length > 10) {
+  //   title = title.substring(1, 11) + "...";
+  // }
 
   return (
     <div className={`${styles.card}  ${color}`}>
@@ -47,8 +47,8 @@ const ListItem = (props) => {
           <b>X</b>
         </button>
       </div>
-      <hr />
-      <span className={styles.note_body}>{note}</span>
+      <hr style={{ width: "95%" }} />
+      <p className={styles.note_body}>{note}</p>
       <span className={styles.time_style}>{props.time}</span>
     </div>
   );
