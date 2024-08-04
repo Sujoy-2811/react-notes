@@ -32,6 +32,7 @@
   right: -10%;
   color: rgb(7, 26, 5);
   user-select: none;
+  font-size: 20px;
 }
 .delete_button:hover {
   cursor: pointer;
@@ -54,6 +55,7 @@
   right: 10%;
   color: rgb(7, 26, 5);
   user-select: none;
+  font-size: 20px;
 }
 .modify_button:hover {
   cursor: pointer;

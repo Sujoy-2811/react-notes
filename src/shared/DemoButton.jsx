@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./DemoButton.module.css";
+import { IoMdAdd } from "react-icons/io";
 import { LOCAL_KEY, noteList } from "../contants";
 
 function DemoButton({ length, addNoteHandler }) {
@@ -20,8 +21,11 @@ function DemoButton({ length, addNoteHandler }) {
   }
   return (
     <button className={styles.demo_button} onClick={addDemoNotes}>
-      Add Demo Notes <br />
-      (if empty){" "}
+      <IoMdAdd />
+      <div className={styles.container}>
+        <span>Demo Notes</span>
+        <span>(if list empty)</span>
+      </div>
     </button>
   );
 }

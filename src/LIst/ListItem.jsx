@@ -1,4 +1,6 @@
 import styles from "./ListItem.module.css";
+import { MdEdit } from "react-icons/md";
+import { MdDelete } from "react-icons/md";
 
 const ListItem = (props) => {
   let color = styles.orange;
@@ -36,7 +38,7 @@ const ListItem = (props) => {
             props.modifyHandle({ state: true, id: props.val.id });
           }}
         >
-          <b>✏️</b>
+          <MdEdit />
         </button>
         <button
           className={styles.delete_button}
@@ -44,7 +46,7 @@ const ListItem = (props) => {
             props.deleteHandle(props.val.id);
           }}
         >
-          <b>X</b>
+          <MdDelete />
         </button>
       </div>
       <hr style={{ width: "95%" }} />
