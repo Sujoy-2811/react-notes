@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 
 import "./util/style.css";
+import "./global.css";
 import InputForm from "./InputForm/InputForm";
 import List from "./LIst/List";
 import styles from "./App.module.css";
 import { noteList, LOCAL_KEY } from "./contants";
+import DemoButton from "./shared/DemoButton";
 
 function App() {
   // states
@@ -44,7 +46,7 @@ function App() {
         localStorage.setItem(LOCAL_KEY, JSON.stringify([item, ...preData]));
         return [item, ...preData];
       });
-      console.log("new note adding end");
+      // console.log("new note adding end");
       // localStorage.setItem(LOCAL_KEY, JSON.stringify(storeData));
     } else {
       setData((preData) => {
@@ -64,7 +66,7 @@ function App() {
   // use effect
   useEffect(() => {
     const storedData = JSON.parse(localStorage.getItem(LOCAL_KEY));
-    console.log("🚀 ~ file: App.jsx:67 ~ useEffect ~ storedData:", storedData);
+    // console.log("🚀 ~ file: App.jsx:67 ~ useEffect ~ storedData:", storedData);
     if (storedData) {
       setData(storedData);
     }
@@ -92,6 +94,7 @@ function App() {
           deleteHandle={deleteHandle}
           modifyHandle={modifyHandle}
         ></List>
+        <DemoButton length={data.length} />
       </section>
     </React.Fragment>
   );
