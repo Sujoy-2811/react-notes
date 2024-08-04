@@ -62,6 +62,13 @@ function App() {
       });
     }
   };
+  const addDemoData = (items) => {
+    console.log(" adding  demo notes start");
+    setData((preData) => {
+      localStorage.setItem(LOCAL_KEY, JSON.stringify([...items, ...preData]));
+      return [...items, ...preData];
+    });
+  };
 
   // use effect
   useEffect(() => {
@@ -94,7 +101,7 @@ function App() {
           deleteHandle={deleteHandle}
           modifyHandle={modifyHandle}
         ></List>
-        <DemoButton length={data.length} />
+        <DemoButton addNoteHandler={addDemoData} length={data.length} />
       </section>
     </React.Fragment>
   );
